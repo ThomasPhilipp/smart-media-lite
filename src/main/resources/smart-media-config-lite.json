@@ -1,0 +1,21 @@
+{
+	"client": "Mr. Developer",
+	"locale": "de",
+	"displayType": "HD1080",
+	"dataPath": "/Users/thomas/",
+	"iconPath": "/Volumes/Dropbox/Projects/Smart Media/Icons/HD1080/",
+	"helpVideoPath": "/Users/ThomasPhilippZwick/Downloads/Test-Bunny.mp4",
+	"pinHash": "6dc13510ac2bcf8ac6c2226b2e16e51e",
+	"pinMasterHash": "155fa09596c7e18e50b58eb7e0c6ccb4",
+	"browserEnabled": true,
+	"kioskEnabled": true,
+	"mediathekEnabled": true,
+	"browserConfig": {
+		"homeUrl": "http://healthcom.at/smartmedia/hmv-1080p/index.html",
+		"homepageUrl": "http://www.google.at",
+		"hospitalUrl": "https://www.humanomed.at/privatklinik-villach/",
+		"weatherUrl": "http://wetter.tv/kaernten/bezirk-villach-stadt/villach",
+		"mediathekUrl": "http://thek.smartmediaportal.at/#/sites/hmv",
+		"hardwareAccelerated": true
+	}
+}

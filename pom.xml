@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Maven version of the XML document-->
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zwickit</groupId>
+    <artifactId>smart-media-ui</artifactId>
+    <version>1.0-Lite</version>
+
+    <name>${project.artifactId}</name>
+    <description>The User Interface based on Java Swing and JavaFX</description>
+
+    <developers>
+        <developer>
+            <id>ZwickIT</id>
+            <name>Thomas Philipp Zwick</name>
+            <email>thomas.philipp.zwick@gmail.com</email>
+        </developer>
+    </developers>
+
+    <organization>
+        <name>Thomas Philipp Zwick</name>
+    </organization>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <app.name>smart-media-ui</app.name>
+
+        <!-- Java -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <!-- Plugin -->
+        <maven.compiler.version>3.3</maven.compiler.version>
+        <maven.antrun.version>1.8</maven.antrun.version>
+
+        <!-- Dependency Versions -->
+        <jackson.version>2.8.6</jackson.version>
+        <logback.version>1.1.5</logback.version>
+        <slf4j.version>1.7.5</slf4j.version>
+
+        <jxbrowser.version>7.32</jxbrowser.version>
+    </properties>
+
+    <dependencies>
+        <!-- Browser -->
+        <dependency>
+            <groupId>com.teamdev.jxbrowser</groupId>
+            <artifactId>jxbrowser-mac</artifactId>
+            <version>${jxbrowser.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.teamdev.jxbrowser</groupId>
+            <artifactId>jxbrowser-linux64</artifactId>
+            <version>${jxbrowser.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.teamdev.jxbrowser</groupId>
+            <artifactId>jxbrowser-swing</artifactId>
+            <version>${jxbrowser.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.teamdev.jxbrowser</groupId>
+            <artifactId>jxbrowser-javafx</artifactId>
+            <version>${jxbrowser.version}</version>
+        </dependency>
+
+        <!-- UI Extensions -->
+
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx-commons</artifactId>
+            <version>8.15</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx-fontawesome</artifactId>
+            <version>4.7.0-5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.hansolo</groupId>
+            <artifactId>Medusa</artifactId>
+            <version>8.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.hansolo</groupId>
+            <artifactId>tilesfx</artifactId>
+            <version>1.6.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.miglayout</groupId>
+            <artifactId>miglayout-swing</artifactId>
+            <version>5.0</version>
+        </dependency>
+
+        <!-- Event-Bus -->
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>15.0</version>
+        </dependency>
+
+        <!-- JSON -->
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <!-- Logging -->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>teamdevreleases</id>
+            <url>https://europe-maven.pkg.dev/jxbrowser/releases</url>
+        </repository>
+        <!-- JxBrowser Early Access Preview -->
+        <!--
+        <repository>
+            <id>teamdeveaps</id>
+            <url>https://europe-maven.pkg.dev/jxbrowser/eaps</url>
+        </repository>
+        -->
+    </repositories>
+
+    <build>
+        <finalName>${app.name}-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- Build JAR and generate a JAR MANIFEST -->
+            <!--<plugin>-->
+                <!--<artifactId>maven-assembly-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--<archive>-->
+                        <!--<manifest>-->
+                            <!--<mainClass>com.zwickit.smart.media.ui.SmartMediaApp</mainClass>-->
+                        <!--</manifest>-->
+                        <!--<manifestEntries>-->
+                            <!--<SplashScreen-Image>graphics/launch-image.png</SplashScreen-Image>-->
+                        <!--</manifestEntries>-->
+                    <!--</archive>-->
+                    <!--<descriptorRefs>-->
+                        <!--<descriptorRef>jar-with-dependencies</descriptorRef>-->
+                    <!--</descriptorRefs>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>smart-media-make-jar</id>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>single</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+
+            <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>8.8.3</version>
+                <configuration>
+                    <jfxMainAppJarName>smart-media-ui.jar</jfxMainAppJarName>
+                    <mainClass>com.zwickit.smart.media.ui.SmartMediaApp</mainClass>
+                    <manifestAttributes>
+                        <SplashScreen-Image>graphics/launch-image.png</SplashScreen-Image>
+                    </manifestAttributes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>create-jfxjar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

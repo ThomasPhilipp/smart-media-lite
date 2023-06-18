@@ -1,0 +1,336 @@
+.root {
+    /* Color definitions */
+    appBeige            : rgb(250, 248, 242); /*#FAF8F2*/
+    appBeigeAlpha1      : rgba(250, 248, 242, 0.1);
+    appBeigeAlpha9      : rgba(250, 248, 242, 0.9);
+    appGray             : rgb( 91,  89,  88); /*#5B5958*/
+    appGreen            : rgb( 77, 163,  47); /*#4DA32F*/
+
+    tileBackground      : rgb(42, 42, 42);
+    tileGray50          : rgba(42, 42, 42, 0.5);
+    tileForeground      : rgb(223, 223, 223);
+}
+
+/* ****************************************************************************
+ * Global
+ * ****************************************************************************/
+
+.glyph-icon {
+    -fx-fill: appBeige;
+}
+
+.glyph-icon:hover {
+    -fx-effect: dropshadow(three-pass-box, appGreen/*rgba(0,0,0,0.2)*/, 4, 0, 0, 0);
+    /*-fx-fill: linear-gradient(appButton 0%, derive(appButton, 100%) 30%, derive(blueviolet, 30%) 85%);*/
+}
+
+/* ****************************************************************************
+ * Header
+ * ****************************************************************************/
+
+.header-panel {
+    -fx-background-image: url('graphics/tablet/header.png');
+}
+
+.header-button {
+    -fx-background-color: transparent;
+}
+
+.header-button .glyph-icon {
+    -fx-fill: appGray;
+}
+
+/* ****************************************************************************
+ * Navigation
+ * ****************************************************************************/
+
+.navigation-panel {
+    -fx-background-image: url('graphics/tablet/navigation.png');
+}
+
+.navigation-button {
+    -fx-background-color: transparent;
+}
+
+.navigation-button .glyph-icon {
+    -fx-fill: appBeige;
+}
+
+.navigation-button:selected {
+    -fx-background-color: appBeigeAlpha9;
+    -fx-background-radius: 0;
+}
+
+.navigation-button:selected .glyph-icon {
+    -fx-fill: appGreen;
+}
+
+.navigation-button:selected:focused {
+    -fx-background-color: appBeigeAlpha9;
+    -fx-background-radius: 0;
+}
+
+.navigation-button:selected:focused .glyph-icon {
+    -fx-fill: appGreen;
+}
+
+/* ****************************************************************************
+ * Common
+ * ****************************************************************************/
+
+.content-panel {
+    -fx-background-image: url('graphics/tablet/content.jpg');
+}
+
+.control-panel {
+    -fx-background-color: appGray;
+}
+
+.control-button {
+    -fx-background-color: transparent;
+    /*-fx-background-radius: 16em;*/
+}
+
+.control-button .glyph-icon {
+    -fx-fill: appBeige;
+}
+
+.control-button:selected .glyph-icon {
+    -fx-fill: appBeige;
+}
+
+.control-field {
+    -fx-text-fill: appBeige;
+    -fx-font-size: 35;
+    -fx-background-color: transparent;
+}
+
+.volume-popup {
+    -fx-background-color: appGray;
+}
+
+.volume-popup .glyph-icon {
+    -fx-fill: black;
+}
+
+.volume-label {
+    -fx-text-fill: black;
+}
+
+.pad-header-label {
+    -fx-padding: 15 0 25 0;
+    -fx-text-fill: appBeige;
+}
+
+.pad-input-label {
+    -fx-padding: 0 0 25 0;
+    -fx-text-fill: appBeige;
+}
+
+/* ****************************************************************************
+ * Home
+ * ****************************************************************************/
+
+.tile-panel {
+    -fx-padding: 0 0 4 0;
+}
+
+.tile-button {
+    -fx-background-color: transparent;
+}
+
+.tile-button:selected .glyph-icon {
+    -fx-fill: appGreen;
+}
+
+.tile-button:selected:focused .glyph-icon {
+    -fx-fill: appGreen;
+}
+
+/* ****************************************************************************
+ * Radio / Tv
+ * ****************************************************************************/
+
+.channel-list-panel {
+    -fx-background-color: appBeigeAlpha9;
+}
+
+.channel-list-button .glyph-icon {
+    -fx-text-fill: black;
+    -fx-fill: black;
+}
+
+.channel-list-button {
+    -fx-background-color: transparent;
+}
+
+.tile-panel {
+    /* empty */
+}
+
+.tile-panel .hyperlink {
+    -fx-padding: 0;
+    -fx-border-color: black;
+}
+
+/*
+ * Workaround: otherwise other hyperlink gets the focus if a hyperlink is
+ * disabled.
+ */
+.tile-panel .hyperlink:focused {
+    -fx-border-color: black;
+    -fx-border-style: solid;
+}
+
+.player-panel {
+    -fx-background-color: appBeigeAlpha1;
+}
+
+.visual-panel {
+    /*-fx-background-color: black;*/
+}
+
+/* ****************************************************************************
+ * Phone
+ * ****************************************************************************/
+
+.phone-panel {
+    -fx-background-color: appBeigeAlpha1;
+}
+
+.phone-button {
+    -fx-background-color: transparent;
+}
+
+.dial-panel {
+    /* empty */
+}
+
+.dial-pad-panel {
+    /* empty */
+}
+
+/* ****************************************************************************
+ * Browser
+ * ****************************************************************************/
+
+.browser-panel {
+    /* empty */
+}
+
+/* ****************************************************************************
+ * Browser
+ * ****************************************************************************/
+
+.night-mode-panel {
+    -fx-background-color: black;
+}
+
+.day-mode-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: appGray;
+}
+
+.day-mode-button .glyph-icon {
+    -fx-fill: appGray;
+}
+
+/* ****************************************************************************
+ * Setting Pad
+ * ****************************************************************************/
+
+.setting-pad-panel {
+    -fx-background-color: appBeigeAlpha1;
+}
+
+.setting-panel {
+    -fx-padding: 15;
+    -fx-background-color: appBeigeAlpha1;
+}
+
+.password-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: appGray;
+}
+
+.setting-tile-button {
+    -fx-background-color: transparent;
+}
+
+.setting-tile-button:selected .glyph-icon {
+    -fx-fill: appGreen;
+}
+
+.setting-tile-button:selected:focused .glyph-icon {
+    -fx-fill: appGreen;
+}
+
+/* ****************************************************************************
+ * Keyboard
+ * ****************************************************************************/
+
+.keyboard-view {
+    /*-fx-background-color: rgba(85, 85, 85, 0.9);*/
+    -fx-background-color: rgba(91, 89, 88, 0.9);
+}
+
+.keyboard-panel {
+    /* empty */
+}
+
+.keyboard-header {
+    -fx-text-fill: appBeige;
+}
+
+.keyboard-text {
+    /* empty */
+}
+
+.keyboard-panel {
+    -fx-padding: 5;
+}
+
+.keyboard-button {
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    /*-fx-background-radius: 1em;*/
+}
+/*
+.keyboard-button:hover {
+    -fx-background-color: appGreen;
+}
+
+.keyboard-button:pressed {
+    -fx-text-fill: black;
+    -fx-background-color: white;
+}
+*/
+.keyboard-option-button {
+    -fx-text-fill: white;
+    -fx-background-color: tilebackground;
+    /*-fx-background-radius: 1em;*/
+}
+/*
+.keyboard-option-button:hover {
+    -fx-background-color: appGreen;
+}
+
+.keyboard-option-button:pressed {
+    -fx-text-fill: black;
+    -fx-background-color: white;
+}
+*/
+.keyboard-exit-button {
+    -fx-text-fill: white;
+    -fx-background-color: tileGray50;
+}
+/*
+.keyboard-exit-button:hover {
+    -fx-background-color: appGreen;
+}
+
+.keyboard-exit-button:pressed {
+    -fx-text-fill: black;
+    -fx-background-color: white;
+}
+*/
